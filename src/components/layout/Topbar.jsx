@@ -1,6 +1,6 @@
 import React from 'react';
-import { useLanguage } from '../../context/LanguageContext';
-import { useAccessibility } from '../../context/AccessibilityContext';
+import { useLanguage } from '../../context/LanguageContext.jsx';
+import { useAccessibility } from '../../context/AccessibilityContext.jsx';
 
 export const Topbar = () => {
   const { lang, setLang, content } = useLanguage();

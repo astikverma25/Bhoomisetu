@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { useLanguage } from '../../context/LanguageContext';
-import { useAutoCarousel } from '../../hooks/useAutoCarousel';
+import { useLanguage } from '../../context/LanguageContext.jsx';
+import { useAutoCarousel } from '../../hooks/useAutoCarousel.js';
 
 export const HeroCarousel = () => {
   const { content } = useLanguage();

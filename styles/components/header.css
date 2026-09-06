@@ -37,33 +37,261 @@
   background-color: var(--color-border-dark);
 }
 
-.portal-brand-logo {
-  height: 48px;
-  width: auto;
+.brand-text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-hindi-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1.15;
+}
+
+.brand-hindi-title span {
+  color: var(--brand-saffron);
+}
+
+.brand-eng-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0b3b60;
+  line-height: 1.15;
+}
+
+.brand-eng-title span {
+  color: var(--brand-green);
+}
+
+.brand-subtext {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-top: 2px;
+  letter-spacing: 0.2px;
 }
 
 .header-auxiliary {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 .g20-logo-img {
-  height: 46px;
+  height: 44px;
   width: auto;
   object-fit: contain;
 }
 
 .cleanindia-logo-img {
-  height: 38px;
+  height: 36px;
   width: auto;
   object-fit: contain;
 }
 
 .akam-logo-img {
-  height: 42px;
+  height: 40px;
   width: auto;
   object-fit: contain;
+}
+
+/* Officer Login Button */
+.btn-officer-login {
+  background: linear-gradient(135deg, #002147 0%, #0b3b60 100%);
+  color: #ffffff;
+  border: 1.5px solid var(--brand-saffron);
+  padding: 7px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(0, 33, 71, 0.15);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-officer-login:hover {
+  background: linear-gradient(135deg, #0b3b60 0%, #1e3a8a 100%);
+  border-color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 33, 71, 0.25);
+}
+
+.login-lock-icon {
+  font-size: 0.95rem;
+}
+
+.login-btn-badge {
+  background: var(--brand-saffron);
+  color: #002147;
+  font-size: 0.65rem;
+  padding: 1px 6px;
+  border-radius: 99px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+/* SSO Login Modal */
+.sso-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 15, 35, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.sso-modal-card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  animation: slideUp 0.25s ease-out;
+}
+
+.sso-modal-header {
+  background: linear-gradient(135deg, #002147 0%, #00152e 100%);
+  padding: 1.25rem 1.5rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--brand-saffron);
+}
+
+.sso-modal-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sso-modal-emblem {
+  height: 42px;
+  filter: brightness(0) invert(1);
+}
+
+.sso-modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.sso-modal-subtitle {
+  font-size: 0.68rem;
+  color: #94a3b8;
+}
+
+.sso-close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.sso-close-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.sso-modal-body {
+  padding: 1.5rem;
+}
+
+.sso-notice-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.76rem;
+  color: #166534;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sso-form-group {
+  margin-bottom: 1rem;
+}
+
+.sso-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 5px;
+}
+
+.sso-select, .sso-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-family: inherit;
+  outline: none;
+  background: #f8fafc;
+  color: #0f172a;
+  transition: all var(--transition-fast);
+}
+
+.sso-select:focus, .sso-input:focus {
+  border-color: var(--primary-navy);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 33, 71, 0.1);
+}
+
+.sso-submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #FF9933 0%, #E65100 100%);
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 0.75rem;
+  box-shadow: 0 4px 12px rgba(230, 81, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sso-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(230, 81, 0, 0.4);
+}
+
+.sso-modal-footer-note {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 /* Quick Search Widget */

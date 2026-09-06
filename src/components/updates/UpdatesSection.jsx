@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguage } from '../../context/LanguageContext';
+import { useLanguage } from '../../context/LanguageContext.jsx';
 
 export const UpdatesSection = () => {
   const { content } = useLanguage();
