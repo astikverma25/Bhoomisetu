@@ -1,0 +1,152 @@
+/* =========================================================
+   MEDIA & EVENT HIGHLIGHTS GALLERY (Azadi Ka Amrit Mahotsav Banner)
+   ========================================================= */
+
+.gallery-section {
+  padding: 56px 0;
+  background-color: #ffffff;
+}
+
+.gallery-banner-card {
+  background: linear-gradient(135deg, #fed7aa 0%, #ffedd5 50%, #fef3c7 100%);
+  border-radius: var(--radius-xl);
+  padding: 36px 40px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid #fdba74;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-banner-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.gallery-banner-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #9a3412;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.gallery-banner-header p {
+  font-size: 0.875rem;
+  color: #7c2d12;
+  margin-top: 4px;
+}
+
+.gallery-content-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+/* Left Graphic / India Flag Landmark Illustration */
+.gallery-left-visual {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 280px;
+  box-shadow: var(--shadow-md);
+  border: 3px solid #ffffff;
+}
+
+.gallery-left-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right Media Showcase & Thumbnails */
+.gallery-right-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gallery-main-featured {
+  height: 210px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 3px solid #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-main-featured img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-main-featured:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-thumbnails-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  gap: 10px;
+}
+
+.gallery-thumb {
+  width: 72px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  opacity: 0.7;
+}
+
+.gallery-thumb.active, .gallery-thumb:hover {
+  border-color: #ea580c;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-nav-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.gallery-nav-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  color: #9a3412;
+  border: 1px solid #fdba74;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.gallery-nav-btn:hover {
+  background: #9a3412;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .gallery-content-grid {
+    grid-template-columns: 1fr;
+  }
+}

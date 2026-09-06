@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 50" width="100%" height="100%">
+  <!-- Invest India Logo -->
+  <g transform="translate(10, 10)">
+    <circle cx="15" cy="15" r="10" fill="#FF9933"/>
+    <polygon points="15,8 19,16 11,16" fill="#ffffff"/>
+    <text x="32" y="14" font-family="'Outfit', sans-serif" font-size="12" font-weight="900" fill="#002147">INVEST</text>
+    <text x="32" y="26" font-family="'Outfit', sans-serif" font-size="13" font-weight="900" fill="#E65100">INDIA</text>
+  </g>
+</svg>

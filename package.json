@@ -1,19 +1,20 @@
 {
-  "name": "bhoomisetu-portal",
+  "name": "bhoomisetu-portal-react",
+  "private": true,
   "version": "1.0.0",
-  "description": "BhoomiSetu - National Integrated Land Information & Citizen Revenue Services Portal",
-  "main": "index.html",
+  "type": "module",
   "scripts": {
-    "dev": "npx serve . -l 3000",
-    "start": "npx serve . -l 3000"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "powershell -ExecutionPolicy Bypass -File .\\server.ps1"
   },
-  "keywords": [
-    "bhoomisetu",
-    "government-portal",
-    "land-records",
-    "dilrmp",
-    "digital-india"
-  ],
-  "author": "Ministry of Rural Development & Department of Land Resources",
-  "license": "UNLICENSED"
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.2"
+  }
 }

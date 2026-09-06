@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 70" width="100%" height="100%">
+  <defs>
+    <linearGradient id="akamSaffron" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF9933"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </linearGradient>
+    <linearGradient id="akamGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#138808"/>
+      <stop offset="100%" stop-color="#0E6206"/>
+    </linearGradient>
+  </defs>
+  <!-- Stylized 75 Number -->
+  <g transform="translate(10, 10)">
+    <!-- 7 in Saffron -->
+    <path d="M 5 8 L 38 8 L 22 46 L 14 46 L 27 16 L 5 16 Z" fill="url(#akamSaffron)"/>
+    <!-- 5 in Tricolor / Green curve -->
+    <path d="M 40 8 L 62 8 L 60 16 L 45 16 L 43 25 C 47 22 55 22 60 26 C 66 31 66 40 59 45 C 53 50 40 50 34 44 L 38 38 C 42 42 49 43 53 40 C 56 37 56 32 52 30 C 48 28 41 29 38 33 Z" fill="url(#akamGreen)"/>
+    <!-- Ashoka Chakra on curve -->
+    <circle cx="49" cy="35" r="4.5" fill="#ffffff" stroke="#002147" stroke-width="0.8"/>
+  </g>
+  <!-- Text: Azadi Ka Amrit Mahotsav -->
+  <text x="78" y="24" font-family="'Outfit', 'Inter', sans-serif" font-size="13" font-weight="800" fill="#002147" letter-spacing="-0.3">Azadi <tspan fill="#E65100">Ka</tspan></text>
+  <text x="78" y="40" font-family="'Outfit', 'Inter', sans-serif" font-size="14" font-weight="900" fill="#E65100">Amrit Mahotsav</text>
+  <text x="78" y="52" font-family="'Inter', sans-serif" font-size="6.5" font-weight="600" fill="#666666" letter-spacing="0.5">CELEBRATING INDIA @ 75+</text>
+</svg>

@@ -1,0 +1,138 @@
+/* =========================================================
+   USEFUL LINKS & CITIZEN PORTAL ACCESS SECTION
+   ========================================================= */
+
+.useful-links-section {
+  padding: 56px 0;
+  background-color: #ffffff;
+}
+
+.useful-links-grid {
+  display: grid;
+  grid-template-columns: 280px 1.2fr 300px;
+  gap: 32px;
+  align-items: center;
+}
+
+/* Left Mini GIS Map Widget */
+.gis-map-widget {
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.gis-map-header {
+  background: var(--primary-navy);
+  color: #ffffff;
+  padding: 10px 14px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gis-map-frame {
+  height: 200px;
+  background: #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.gis-map-canvas {
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(#94a3b8 10%, transparent 11%),
+    radial-gradient(#94a3b8 10%, transparent 11%);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  position: relative;
+}
+
+.gis-map-pin {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #dc2626;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.gis-map-footer {
+  padding: 10px 14px;
+  background: #ffffff;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Center Links List */
+.links-list-card {
+  padding: 10px 0;
+}
+
+.links-list-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.links-list-card li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  transition: all var(--transition-fast);
+}
+
+.links-list-card li a::before {
+  content: '•';
+  color: var(--brand-saffron-dark);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.links-list-card li a:hover {
+  color: var(--brand-saffron-dark);
+  padding-left: 6px;
+}
+
+/* Right Illustration */
+.links-illustration-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.links-illustration-box img, .links-illustration-box svg {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .useful-links-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .links-illustration-box {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .useful-links-grid {
+    grid-template-columns: 1fr;
+  }
+}

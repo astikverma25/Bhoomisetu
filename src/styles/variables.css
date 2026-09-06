@@ -1,0 +1,80 @@
+/* =========================================================
+   DESIGN TOKENS & SYSTEM VARIABLES
+   Indian Government Portal Theme: Saffron, Navy, Emerald & Gold
+   ========================================================= */
+
+:root {
+  /* Brand Palette */
+  --primary-navy: #002147;        /* Indian Navy Blue */
+  --primary-navy-dark: #00152e;
+  --primary-navy-light: #0b3b60;
+  
+  --brand-saffron: #FF9933;       /* National Saffron */
+  --brand-saffron-dark: #E65100;
+  --brand-saffron-light: #FFF3E0;
+  --brand-saffron-gradient: linear-gradient(135deg, #FF9933 0%, #E65100 100%);
+  --hero-orange-bg: #e76f51;
+  --hero-saffron-bg: #e67e22;
+
+  --brand-green: #138808;         /* India Green */
+  --brand-green-dark: #0e6206;
+  --brand-green-light: #E8F5E9;
+  
+  --brand-gold: #d4af37;
+  --brand-gold-light: #fef9c3;
+
+  /* Neutral Spectrum */
+  --color-white: #ffffff;
+  --color-bg-light: #f8fafc;
+  --color-bg-subtle: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-border-dark: #cbd5e1;
+  --color-text-main: #1e293b;
+  --color-text-muted: #64748b;
+  --color-text-dark: #0f172a;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Outfit', 'Noto Sans Devanagari', -apple-system, sans-serif;
+  --font-devanagari: 'Noto Sans Devanagari', 'Mangal', sans-serif;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 4px 20px rgba(0, 33, 71, 0.08);
+
+  /* Border Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Layout Max Width */
+  --container-max-width: 1240px;
+  --header-height: 84px;
+  --topbar-height: 40px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* High Contrast Mode */
+body.high-contrast {
+  --primary-navy: #000000;
+  --primary-navy-dark: #000000;
+  --color-bg-light: #000000;
+  --color-bg-subtle: #111111;
+  --color-text-main: #ffff00;
+  --color-text-muted: #ffffff;
+  --color-text-dark: #ffffff;
+  --color-border: #ffffff;
+  --brand-saffron: #ffcc00;
+  --brand-green: #00ff66;
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}

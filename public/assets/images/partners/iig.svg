@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" width="100%" height="100%">
+  <!-- IIG / India Investment Grid -->
+  <g transform="translate(10, 5)">
+    <text x="0" y="32" font-family="'Outfit', sans-serif" font-size="34" font-weight="900" fill="#FF9933">I</text>
+    <text x="14" y="32" font-family="'Outfit', sans-serif" font-size="34" font-weight="900" fill="#FF9933">I</text>
+    <text x="28" y="32" font-family="'Outfit', sans-serif" font-size="34" font-weight="900" fill="#138808">G</text>
+    <text x="60" y="20" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" fill="#002147">INDIA INVESTMENT</text>
+    <text x="60" y="30" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" fill="#002147">GRID</text>
+  </g>
+</svg>

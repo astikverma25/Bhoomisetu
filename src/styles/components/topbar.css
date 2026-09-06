@@ -1,0 +1,123 @@
+/* Top Utility & Accessibility Bar */
+.gov-topbar {
+  background-color: var(--primary-navy-dark);
+  color: #ffffff;
+  font-size: 0.8125rem;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 100;
+}
+
+.gov-topbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.topbar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #e2e8f0;
+  transition: color var(--transition-fast);
+}
+
+.topbar-item:hover {
+  color: var(--brand-saffron);
+}
+
+.topbar-item svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Accessibility Controls */
+.accessibility-tools {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.font-btn {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 2px;
+  transition: background var(--transition-fast);
+}
+
+.font-btn:hover, .font-btn:focus {
+  background: var(--brand-saffron);
+  color: var(--primary-navy);
+}
+
+.contrast-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 2px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.contrast-toggle:hover {
+  background: var(--brand-saffron);
+  color: var(--primary-navy);
+}
+
+/* Language Switcher */
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.language-selector select {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 3px 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  outline: none;
+  cursor: pointer;
+}
+
+.language-selector select option {
+  background: var(--primary-navy);
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .gov-topbar .container {
+    justify-content: center;
+  }
+  .topbar-left {
+    display: none;
+  }
+}
