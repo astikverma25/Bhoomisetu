@@ -1,0 +1,88 @@
+/* =========================================================
+   PARTNERS & INITIATIVES MARQUEE / SLIDER
+   ========================================================= */
+
+.partners-carousel-section {
+  background: var(--color-bg-light);
+  padding: 30px 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.partners-slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.partners-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  animation: scroll-partners 30s linear infinite;
+  white-space: nowrap;
+}
+
+.partners-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-partners {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.partner-logo-item {
+  flex-shrink: 0;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  transition: all var(--transition-fast);
+  filter: grayscale(20%);
+}
+
+.partner-logo-item:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.08);
+}
+
+.partner-logo-item img, .partner-logo-item svg {
+  height: 100%;
+  width: auto;
+}
+
+/* Institutional Footer Partner Logos Strip (india.gov.in, Incredible India, MEA, etc.) */
+.institutional-partners-strip {
+  background: #ffffff;
+  padding: 24px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.institutional-logos-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.inst-logo-card {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.inst-logo-card:hover {
+  transform: translateY(-3px);
+}
+
+.inst-logo-card img, .inst-logo-card svg {
+  height: 100%;
+  width: auto;
+}

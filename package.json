@@ -1,0 +1,19 @@
+{
+  "name": "bhoomisetu-portal",
+  "version": "1.0.0",
+  "description": "BhoomiSetu - National Integrated Land Information & Citizen Revenue Services Portal",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "start": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "bhoomisetu",
+    "government-portal",
+    "land-records",
+    "dilrmp",
+    "digital-india"
+  ],
+  "author": "Ministry of Rural Development & Department of Land Resources",
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>BhoomiSetu | National Integrated Land & Revenue Services Portal | Govt. of India</title>
+  <meta name="description" content="Official National Integrated Land Records & Revenue Services Portal (BhoomiSetu) under the Digital India Land Records Modernization Programme (DILRMP). Access RoR, Bhu-Aadhaar ULPIN, and GIS Cadastral Maps.">
+  <meta name="keywords" content="BhoomiSetu, DILRMP, Land Records, Bhu-Aadhaar, ULPIN, RoR, Khasra, Khatauni, GIS Maps, Ministry of Rural Development">
+
+  <!-- Google Fonts: Inter, Outfit, Noto Sans Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet (Aggregated Component Architecture) -->
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <!-- Screen Reader Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- =========================================================
+       1. ACCESSIBILITY & CONTACT TOPBAR
+       ========================================================= -->
+  <aside class="gov-topbar" aria-label="Accessibility and Utility Bar">
+    <div class="container">
+      <div class="topbar-left">
+        <a href="mailto:support.bhoomisetu@gov.in" class="topbar-item">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <span id="topbarEmail">support.bhoomisetu@gov.in</span>
+        </a>
+        <span class="topbar-item" id="topbarHelpline">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Toll Free Helpline: 1800-11-2026 / +91-11-2306-1234
+        </span>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Accessibility Controls -->
+        <div class="accessibility-tools" aria-label="Text size and visual controls">
+          <button type="button" class="font-btn" id="fontDecreaseBtn" title="Decrease font size">A-</button>
+          <button type="button" class="font-btn" id="fontNormalBtn" title="Reset standard font size">A</button>
+          <button type="button" class="font-btn" id="fontIncreaseBtn" title="Increase font size">A+</button>
+          <button type="button" class="contrast-toggle" id="contrastToggleBtn" title="Toggle High Contrast">Contrast</button>
+        </div>
+
+        <!-- Language Switcher -->
+        <div class="language-selector">
+          <label for="languageSelect" class="sr-only" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0);">Select Language</label>
+          <select id="languageSelect" aria-label="Select Language">
+            <option value="en" selected>English</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================
+       2. GOVERNMENT BRANDING HEADER
+       ========================================================= -->
+  <header class="main-header">
+    <div class="header-branding">
+      <div class="container">
+        <!-- Official National Emblem & BhoomiSetu Logo -->
+        <div class="brand-wrapper">
+          <img src="./assets/images/emblems/national-emblem.png" alt="State Emblem of India" class="national-emblem-img">
+          <div class="brand-divider"></div>
+          <img src="./assets/images/emblems/bhoomisetu-logo.svg" alt="BhoomiSetu National Land Portal" class="portal-brand-logo">
+        </div>
+
+        <!-- Auxiliary Branding: G20, Clean India, Azadi Ka Amrit Mahotsav & Search -->
+        <div class="header-auxiliary">
+          <img src="./assets/images/banners/g20-logo.png" alt="G20 Bharat" class="g20-logo-img">
+          <img src="./assets/images/banners/cleanindialogo.png" alt="Swachh Bharat Clean India" class="cleanindia-logo-img">
+          <img src="./assets/images/banners/azadi-ka-amrit-mahotsav.svg" alt="Azadi Ka Amrit Mahotsav" class="akam-logo-img">
+          
+          <form class="header-search" id="headerSearchForm" role="search">
+            <input type="text" id="headerSearchInput" placeholder="Search Portal..." aria-label="Search Land Services">
+            <button type="button" id="searchSubmitBtn" aria-label="Submit Search">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="gov-navbar" aria-label="Main Navigation">
+      <div class="container">
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Menu">☰</button>
+        <div class="nav-links" id="navLinksContainer">
+          <a href="#" class="nav-link active" id="navHome">Home</a>
+          <a href="#about" class="nav-link" id="navAbout">About Us</a>
+          <a href="#services" class="nav-link" id="navServices">Land Services</a>
+          <a href="#updates" class="nav-link" id="navCitizen">Citizen Corner</a>
+          <a href="#services" class="nav-link" id="navSchemes">DILRMP & Schemes</a>
+          <a href="#updates" class="nav-link" id="navCirculars">Circulars & Tenders</a>
+          <a href="#gallery" class="nav-link" id="navMedia">Media Updates</a>
+          <a href="#useful-links" class="nav-link" id="navGrievance">Grievance Redressal</a>
+          <a href="#footer" class="nav-link" id="navContact">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+       MAIN CONTENT CONTAINER
+       ========================================================= -->
+  <main id="main-content">
+    
+    <!-- =========================================================
+         3. HERO BANNER CAROUSEL
+         ========================================================= -->
+    <section class="hero-carousel-section" aria-label="Hero Spotlight Slider">
+      <div class="container hero-slider-container">
+        
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+          <div class="hero-content">
+            <span class="hero-badge">NATIONAL CONCLAVE 2026</span>
+            <h1 class="hero-title">Workshop on Leveraging AI in Rural Development</h1>
+            <p class="hero-subtitle">Organized by Department of Land Resources & Ministry of Rural Development at Bharat Mandapam, New Delhi</p>
+            <div class="hero-date">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+              <span>Held on 25th June, 2026</span>
+            </div>
+            <div>
+              <a href="#services" class="hero-cta-btn">
+                Know More
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="hero-visual-wrapper">
+            <div class="hero-image-frame">
+              <img src="./assets/images/hero/herovisual1.jpg" alt="Workshop on Leveraging AI in Rural Development">
+            </div>
+            <div class="hero-nav-controls">
+              <div class="hero-dots">
+                <span class="hero-dot active"></span>
+                <span class="hero-dot"></span>
+                <span class="hero-dot"></span>
+              </div>
+              <button class="hero-nav-btn hero-prev-btn" aria-label="Previous Slide">❮</button>
+              <button class="hero-nav-btn hero-next-btn" aria-label="Next Slide">❯</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <div class="hero-content">
+            <span class="hero-badge">MINISTERIAL REVIEW</span>
+            <h2 class="hero-title">हिंदी सलाहकार समिति की बैठक • Digital Governance</h2>
+            <p class="hero-subtitle">High level review chaired by Hon'ble Minister for Rural Development with State Principal Secretaries</p>
+            <div class="hero-date">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+              <span>19th June, 2026 • Krishi Bhawan, New Delhi</span>
+            </div>
+            <div>
+              <a href="#about" class="hero-cta-btn">
+                Know More
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="hero-visual-wrapper">
+            <div class="hero-image-frame">
+              <img src="./assets/images/hero/herovisual2.jpg" alt="Hindi Salahakar Samiti Meeting">
+            </div>
+            <div class="hero-nav-controls">
+              <div class="hero-dots">
+                <span class="hero-dot"></span>
+                <span class="hero-dot active"></span>
+                <span class="hero-dot"></span>
+              </div>
+              <button class="hero-nav-btn hero-prev-btn" aria-label="Previous Slide">❮</button>
+              <button class="hero-nav-btn hero-next-btn" aria-label="Next Slide">❯</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <div class="hero-content">
+            <span class="hero-badge">NATIONWIDE BROADCAST</span>
+            <h2 class="hero-title">Mann Ki Baat on Digital Empowerment & Land Rights</h2>
+            <p class="hero-subtitle">Bhu-Aadhaar (ULPIN) milestone celebrations touching over 150 million rural households nationwide</p>
+            <div class="hero-date">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+              <span>30th August 2026 • Time: 11:00 AM</span>
+            </div>
+            <div>
+              <a href="#updates" class="hero-cta-btn">
+                Watch Live
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="hero-visual-wrapper">
+            <div class="hero-image-frame">
+              <img src="./assets/images/hero/herovisual3.jpg" alt="Mann Ki Baat Digital Empowerment">
+            </div>
+            <div class="hero-nav-controls">
+              <div class="hero-dots">
+                <span class="hero-dot"></span>
+                <span class="hero-dot"></span>
+                <span class="hero-dot active"></span>
+              </div>
+              <button class="hero-nav-btn hero-prev-btn" aria-label="Previous Slide">❮</button>
+              <button class="hero-nav-btn hero-next-btn" aria-label="Next Slide">❯</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4. AZADI KA AMRIT MAHOTSAV RIBBON
+         ========================================================= -->
+    <section class="initiative-ribbon-section">
+      <div class="container">
+        <div class="initiative-banner-card">
+          <div class="initiative-left">
+            <div class="india-map-badge" style="padding: 4px; overflow: hidden; background: #ffffff;">
+              <img src="./assets/images/banners/indianflag.png" alt="National Flag of India" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+            </div>
+            <div class="initiative-text">
+              <h3 id="akamHeading">Azadi Ka Amrit Mahotsav</h3>
+              <p id="akamSubheading">75+ Years Prior To Independence Day, 2026 & Extending Up To Viksit Bharat 2047</p>
+            </div>
+          </div>
+          <div class="initiative-right">
+            <img src="./assets/images/banners/azadi-ka-amrit-mahotsav.svg" alt="Azadi Ka Amrit Mahotsav" class="akam-badge-logo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         5. ABOUT BHOOMISETU SECTION (SPLIT TABBED DESIGN)
+         ========================================================= -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="aboutSectionTitle">ABOUT BHOOMISETU</h2>
+          <p class="section-subtitle" id="aboutSectionSubtitle">Unified National Land Information Management System & Citizen Revenue Services</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Vertical Navigation -->
+          <div class="about-nav-card">
+            <div class="about-nav-header">General Information</div>
+            <div class="about-tabs-list">
+              <button type="button" class="about-tab-btn active" data-tab="overview">
+                <span>About BhoomiSetu</span>
+                <span>›</span>
+              </button>
+              <button type="button" class="about-tab-btn" data-tab="vision">
+                <span>Vision & DILRMP Objectives</span>
+                <span>›</span>
+              </button>
+              <button type="button" class="about-tab-btn" data-tab="officers">
+                <span>List Of Officers & Directorate</span>
+                <span>›</span>
+              </button>
+              <button type="button" class="about-tab-btn" data-tab="charter">
+                <span>Citizen Charter & SLA 2026</span>
+                <span>›</span>
+              </button>
+              <button type="button" class="about-tab-btn" data-tab="holidays">
+                <span>Operational Schedule & Holidays</span>
+                <span>›</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Dynamic Content Card -->
+          <div class="about-content-card">
+            <div class="about-detail">
+              <h3 id="aboutTabHeading">Unified National Land Registry Architecture</h3>
+              <p id="aboutTabBody">BhoomiSetu (भूमि सेतु) serves as the singular digital gateway established under the Digital India Land Records Modernization Programme (DILRMP). It seamlessly bridges 28 States and 8 Union Territories with a unified land transaction protocol, computerized Record of Rights (RoR), and GIS cadastral maps.</p>
+              <a href="#services" id="aboutTabLink">Know More &gt;</a>
+            </div>
+            <div class="about-illustration">
+              <img src="./assets/images/icons/about-illustration.svg" alt="Digital Land Records System Illustration">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         6. CORE SERVICES & PROGRAMMES (4-COLUMN GRID)
+         ========================================================= -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="servicesSectionTitle">CORE SERVICES & PROGRAMMES</h2>
+          <p class="section-subtitle" id="servicesSectionSubtitle">Integrated Digital Governance Modules Facilitating Hassle-Free Citizen Land Services</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <img src="./assets/images/icons/bhu-aadhaar.svg" alt="Bhu-Aadhaar ULPIN">
+            </div>
+            <h4 id="serviceCardTitle1">What is Bhu-Aadhaar (ULPIN)?</h4>
+            <p id="serviceCardDesc1">A unique 14-digit alphanumeric geo-tagged identity assigned to every survey parcel in India based on longitude and latitude coordinates.</p>
+            <a href="#updates" class="service-card-link" id="serviceCardLink1">Know More &gt;</a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <img src="./assets/images/icons/ror-mutation.svg" alt="Online RoR & Mutation">
+            </div>
+            <h4 id="serviceCardTitle2">Online RoR & Digital Mutation</h4>
+            <p id="serviceCardDesc2">Instant download of digitally signed Record of Rights (Khatauni/Khasra/Patta) with QR code verification and seamless mutation tracking.</p>
+            <a href="#updates" class="service-card-link" id="serviceCardLink2">Know More &gt;</a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <img src="./assets/images/icons/gis-maps.svg" alt="Geo-Referenced Cadastral Maps">
+            </div>
+            <h4 id="serviceCardTitle3">Geo-Referenced Cadastral Maps</h4>
+            <p id="serviceCardDesc3">High-resolution satellite imagery overlayed with survey parcel boundaries via BhuNaksha GIS platform for precise area demarcation.</p>
+            <a href="#updates" class="service-card-link" id="serviceCardLink3">Know More &gt;</a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <img src="./assets/images/icons/revenue-court.svg" alt="Revenue Court Dispute Tracker">
+            </div>
+            <h4 id="serviceCardTitle4">Revenue Court Dispute Tracker</h4>
+            <p id="serviceCardDesc4">Online repository of land dispute litigation, hearing calendar, automated stay-order checks, and judicial status updates.</p>
+            <a href="#updates" class="service-card-link" id="serviceCardLink4">Know More &gt;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         7. MEDIA GALLERY & EVENT HIGHLIGHTS
+         ========================================================= -->
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+        <div class="gallery-banner-card">
+          <div class="gallery-banner-header">
+            <h3 id="galleryTitle">AZADI KA AMRIT MAHOTSAV & GLIMPSES</h3>
+            <p id="gallerySubtitle">75 Weeks Prior To Independence Day & Extending Initiatives Towards Viksit Bharat 2047</p>
+          </div>
+
+          <div class="gallery-content-grid">
+            <!-- Left India Flag & Landmark Visual -->
+            <div class="gallery-left-visual">
+              <img src="./assets/images/hero/herovisual1.jpg" alt="National Conclave on AI in Rural Governance">
+            </div>
+
+            <!-- Right Media Showcase with Thumbnails & Nav -->
+            <div class="gallery-right-showcase">
+              <div class="gallery-main-featured">
+                <img src="./assets/images/hero/herovisual2.jpg" id="galleryFeaturedImg" alt="Featured Government Event">
+              </div>
+              <div class="gallery-thumbnails-bar">
+                <div class="gallery-thumbnails">
+                  <div class="gallery-thumb" data-idx="0">
+                    <img src="./assets/images/hero/herovisual1.jpg" alt="Thumb 1">
+                  </div>
+                  <div class="gallery-thumb active" data-idx="1">
+                    <img src="./assets/images/hero/herovisual2.jpg" alt="Thumb 2">
+                  </div>
+                  <div class="gallery-thumb" data-idx="2">
+                    <img src="./assets/images/hero/herovisual3.jpg" alt="Thumb 3">
+                  </div>
+                </div>
+                <div class="gallery-nav-btns">
+                  <button class="gallery-nav-btn gallery-prev-btn" aria-label="Previous gallery image">❮</button>
+                  <button class="gallery-nav-btn gallery-next-btn" aria-label="Next gallery image">❯</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         8. 3-COLUMN UPDATES & SOCIAL FEEDS SECTION
+         ========================================================= -->
+    <section class="updates-section" id="updates">
+      <div class="container">
+        <div class="updates-grid">
+          
+          <!-- Column 1: What's New / Circulars -->
+          <div class="feed-card">
+            <div class="feed-header">
+              <h3 class="feed-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ea580c"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+                What's New
+              </h3>
+            </div>
+            <div class="feed-scroll-body" id="whatsNewList">
+              <!-- Dynamically rendered via feed-renderer.js -->
+            </div>
+          </div>
+
+          <!-- Column 2: Facebook Updates -->
+          <div class="feed-card">
+            <div class="feed-header">
+              <h3 class="feed-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Facebook Updates
+              </h3>
+            </div>
+            <div class="feed-scroll-body" id="fbPostContainer">
+              <div class="fb-profile-strip">
+                <div class="fb-avatar">BS</div>
+                <div class="fb-info">
+                  <h5>BhoomiSetu - Ministry of Rural Dev</h5>
+                  <span>248,915 followers • 4h ago</span>
+                </div>
+              </div>
+              <p class="fb-post-text">Hon'ble Minister reviewed the progress of 100% computerized land records integration with State Banking Consortia, enabling instant loan verification! #BhoomiSetu #DigitalIndia</p>
+              <div class="fb-post-media">
+                <img src="./assets/images/hero/herovisual2.jpg" alt="Ministry Facebook update photo">
+              </div>
+              <div class="fb-post-actions">
+                <span>👍 1.4K Likes</span>
+                <span>💬 184 Comments</span>
+                <span>🔄 320 Shares</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Twitter / X Updates -->
+          <div class="feed-card">
+            <div class="feed-header">
+              <h3 class="feed-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#0f172a"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Twitter Updates
+              </h3>
+            </div>
+            <div class="feed-scroll-body" id="twitterFeedList">
+              <!-- Dynamically rendered via feed-renderer.js -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         9. USEFUL LINKS & GIS PORTAL SECTION
+         ========================================================= -->
+    <section class="useful-links-section" id="useful-links">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="usefulLinksTitle">USEFUL LINKS & ALLIED PORTALS</h2>
+        </div>
+
+        <div class="useful-links-grid">
+          <!-- Left Mini GIS Widget -->
+          <div class="gis-map-widget">
+            <div class="gis-map-header">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              BhoomiSetu GIS Cadastral
+            </div>
+            <div class="gis-map-frame">
+              <div class="gis-map-canvas">
+                <div class="gis-map-pin">
+                  📍 Plot #204-A (Verified)
+                </div>
+              </div>
+            </div>
+            <div class="gis-map-footer">
+              Lat: 28.6139° N, Long: 77.2090° E
+            </div>
+          </div>
+
+          <!-- Middle Links List -->
+          <div class="links-list-card">
+            <ul>
+              <li><a href="https://www.india.gov.in" target="_blank" rel="noopener">Government Of India</a></li>
+              <li><a href="https://www.india.gov.in" target="_blank" rel="noopener">National Portal Of India</a></li>
+              <li><a href="https://rural.nic.in" target="_blank" rel="noopener">Ministry of Rural Development</a></li>
+              <li><a href="https://dolr.gov.in" target="_blank" rel="noopener">Department of Land Resources (DoLR)</a></li>
+              <li><a href="https://dilrmp.gov.in" target="_blank" rel="noopener">Digital India Land Records Modernization (DILRMP)</a></li>
+              <li><a href="https://bhuvan.nrsc.gov.in" target="_blank" rel="noopener">Bhuvan ISRO Geo-Spatial Portal</a></li>
+              <li><a href="https://pmkisan.gov.in" target="_blank" rel="noopener">PM-Kisan Samman Nidhi Yojana</a></li>
+              <li><a href="https://ngdrs.gov.in" target="_blank" rel="noopener">National Generic Document Registration (NGDRS)</a></li>
+              <li><a href="https://pgportal.gov.in" target="_blank" rel="noopener">Central Grievance Redressal (CPGRAMS)</a></li>
+              <li><a href="https://data.gov.in" target="_blank" rel="noopener">Open Government Data Platform India</a></li>
+            </ul>
+          </div>
+
+          <!-- Right Monitor Graphic -->
+          <div class="links-illustration-box">
+            <img src="./assets/images/icons/services-illustration.svg" alt="Digital Land Records Access Graphic">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         10. PARTNERS & INITIATIVES MARQUEE
+         ========================================================= -->
+    <section class="partners-carousel-section" aria-label="National Initiatives and Programs">
+      <div class="container partners-slider-wrapper">
+        <div class="partners-track">
+          <div class="partner-logo-item"><img src="./assets/images/partners/make-in-india.svg" alt="Make in India"></div>
+          <div class="partner-logo-item"><img src="./assets/images/partners/invest-india.svg" alt="Invest India"></div>
+          <div class="partner-logo-item"><img src="./assets/images/partners/madad.svg" alt="MADAD Portal"></div>
+          <div class="partner-logo-item"><img src="./assets/images/partners/bharat-quiz.svg" alt="Bharat Quiz / MyGov"></div>
+          <div class="partner-logo-item"><img src="./assets/images/partners/pravasi-bharatiya.svg" alt="Pravasi Bharatiya Divas"></div>
+          <!-- Duplicate for continuous infinite marquee loop -->
+          <div class="partner-logo-item"><img src="./assets/images/partners/make-in-india.svg" alt="Make in India"></div>
+          <div class="partner-logo-item"><img src="./assets/images/partners/invest-india.svg" alt="Invest India"></div>
+          <div class="partner-logo-item"><img src="./assets/images/partners/madad.svg" alt="MADAD Portal"></div>
+          <div class="partner-logo-item"><img src="./assets/images/partners/bharat-quiz.svg" alt="Bharat Quiz / MyGov"></div>
+          <div class="partner-logo-item"><img src="./assets/images/partners/pravasi-bharatiya.svg" alt="Pravasi Bharatiya Divas"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         11. INSTITUTIONAL PARTNERS STRIP
+         ========================================================= -->
+    <div class="institutional-partners-strip">
+      <div class="container institutional-logos-grid">
+        <div class="inst-logo-card"><img src="./assets/images/partners/india-gov.svg" alt="National Portal of India"></div>
+        <div class="inst-logo-card"><img src="./assets/images/partners/incredible-india.svg" alt="Incredible India"></div>
+        <div class="inst-logo-card"><img src="./assets/images/partners/india-africa.svg" alt="India Africa"></div>
+        <div class="inst-logo-card"><img src="./assets/images/partners/iig.svg" alt="India Investment Grid"></div>
+        <div class="inst-logo-card"><img src="./assets/images/partners/mea-logo.svg" alt="Ministry of Rural Development"></div>
+        <div class="inst-logo-card"><img src="./assets/images/partners/iccr-logo.svg" alt="NIC DILRMP"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- =========================================================
+       12. COMPREHENSIVE DARK GOVERNMENT FOOTER
+       ========================================================= -->
+  <footer class="gov-footer" id="footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        
+        <!-- Column 1: Brand & Ministry Information -->
+        <div class="footer-brand-col">
+          <div class="footer-emblem-wrap">
+            <img src="./assets/images/emblems/national-emblem.png" alt="Emblem of India" style="height: 58px; width: auto; filter: brightness(0) invert(1);">
+            <div>
+              <h3 class="footer-brand-title">BhoomiSetu • भूमि सेतु</h3>
+              <p class="footer-brand-desc">National Integrated Land Information Management System</p>
+            </div>
+          </div>
+          <p class="footer-brand-desc">Department of Land Resources • Ministry of Rural Development, Government of India, New Delhi - 110001</p>
+          <div class="footer-hours-box">
+            <strong>Working Hours:</strong><br>
+            9:00am To 1:00pm - 1:30pm To 5:30pm (Monday To Friday)
+          </div>
+        </div>
+
+        <!-- Column 2: Legal & Governance Policies -->
+        <div class="footer-links-col">
+          <h4>Policy & Compliance</h4>
+          <ul>
+            <li><a href="#">Copy Right Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Hyperlinking Policy</a></li>
+            <li><a href="#">Accessibility Option</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Citizen Direct Connect -->
+        <div class="footer-links-col">
+          <h4>Quick Assistance</h4>
+          <ul>
+            <li><a href="#about">About BhoomiSetu</a></li>
+            <li><a href="#services">Land Record Services</a></li>
+            <li><a href="#updates">Grievance Redressal (CPGRAMS)</a></li>
+            <li><a href="#useful-links">State Land Portals</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Copyright Strip -->
+    <div class="footer-bottom-bar">
+      <div class="container">
+        <p>@Content By Department of Land Resources, Ministry of Rural Development, Govt. of India | All Rights Reserved 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       13. CITIZEN SEARCH MODAL
+       ========================================================= -->
+  <div class="search-modal-backdrop" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="modalSearchInput">
+    <div class="search-modal-dialog">
+      <div class="search-modal-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#002147"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" id="modalSearchInput" placeholder="Search RoR, Bhu-Aadhaar, Cadastral Maps, Services..." autocomplete="off">
+        <button type="button" class="search-modal-close" id="searchModalClose" aria-label="Close Search">&times;</button>
+      </div>
+      <div class="search-results-container" id="searchResultsContainer">
+        <!-- Live search results rendered via search-modal.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Module Bootstrap -->
+  <script type="module" src="./scripts/app.js"></script>
+</body>
+</html>

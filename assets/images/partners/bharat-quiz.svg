@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 50" width="100%" height="100%">
+  <!-- Bharat Quiz / MyGov Logo -->
+  <g transform="translate(10, 8)">
+    <circle cx="16" cy="16" r="12" fill="#FF9933"/>
+    <text x="16" y="21" font-family="'Outfit', sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">?</text>
+    <text x="36" y="17" font-family="'Noto Sans Devanagari', 'Outfit', sans-serif" font-size="12" font-weight="800" fill="#002147">भारत</text>
+    <text x="36" y="29" font-family="'Outfit', sans-serif" font-size="9" font-weight="700" fill="#138808">QUIZ / MyGov</text>
+  </g>
+</svg>

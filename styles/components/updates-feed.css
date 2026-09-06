@@ -1,0 +1,217 @@
+/* =========================================================
+   3-COLUMN REALTIME UPDATES & SOCIAL FEEDS
+   What's New | Facebook Updates | Twitter Updates
+   ========================================================= */
+
+.updates-section {
+  padding: 56px 0;
+  background-color: var(--color-bg-light);
+}
+
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.feed-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+  overflow: hidden;
+}
+
+.feed-header {
+  padding: 16px 20px;
+  border-bottom: 2px solid var(--brand-saffron);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.feed-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.feed-scroll-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* Custom Scrollbar */
+.feed-scroll-body::-webkit-scrollbar {
+  width: 5px;
+}
+.feed-scroll-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+/* Column 1: What's New List Items */
+.news-item {
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--color-border);
+  position: relative;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.news-date {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.news-badge {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: #fee2e2;
+  color: #dc2626;
+  animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.news-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text-main);
+  transition: color var(--transition-fast);
+}
+
+.news-item a:hover .news-text {
+  color: var(--brand-saffron-dark);
+}
+
+/* Column 2: Facebook Card */
+.fb-profile-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.fb-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--primary-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 800;
+  border: 2px solid #3b82f6;
+}
+
+.fb-info h5 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.fb-info span {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.fb-post-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text-main);
+  margin-bottom: 12px;
+}
+
+.fb-post-media {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 180px;
+  margin-bottom: 12px;
+}
+
+.fb-post-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fb-post-actions {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+/* Column 3: Twitter Feed */
+.tweet-item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tweet-item:last-child {
+  border-bottom: none;
+}
+
+.tweet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.tweet-user {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+.tweet-time {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.tweet-body {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text-main);
+}
+
+@media (max-width: 992px) {
+  .updates-grid {
+    grid-template-columns: 1fr;
+  }
+  .feed-card {
+    height: 400px;
+  }
+}

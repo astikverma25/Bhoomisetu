@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 50" width="100%" height="100%">
+  <!-- Make in India Lion Silhouette with Gears -->
+  <g transform="translate(10, 8)">
+    <path d="M 15 28 L 22 28 L 26 22 L 35 22 L 40 28 L 48 28 L 52 18 L 45 10 L 30 10 L 25 15 L 18 15 Z" fill="#111111"/>
+    <!-- Gear cutouts in lion body -->
+    <circle cx="28" cy="18" r="3" fill="#ffffff"/>
+    <circle cx="38" cy="18" r="2.5" fill="#ffffff"/>
+    <circle cx="48" cy="22" r="2" fill="#ffffff"/>
+    <!-- Mane details -->
+    <path d="M 12 18 C 8 15 8 25 14 26 Z" fill="#111111"/>
+    <text x="58" y="20" font-family="'Outfit', sans-serif" font-size="10" font-weight="900" fill="#111111" letter-spacing="0.5">MAKE IN</text>
+    <text x="58" y="32" font-family="'Outfit', sans-serif" font-size="12" font-weight="900" fill="#111111" letter-spacing="1">INDIA</text>
+  </g>
+</svg>

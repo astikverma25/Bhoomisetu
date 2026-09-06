@@ -1,0 +1,185 @@
+/* Main Government Header & Navigation */
+.main-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 90;
+  box-shadow: var(--shadow-sm);
+}
+
+.header-branding {
+  padding: 12px 0;
+}
+
+.header-branding .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.national-emblem-img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-divider {
+  width: 1.5px;
+  height: 48px;
+  background-color: var(--color-border-dark);
+}
+
+.portal-brand-logo {
+  height: 48px;
+  width: auto;
+}
+
+.header-auxiliary {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.g20-logo-img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+}
+
+.cleanindia-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.akam-logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Quick Search Widget */
+.header-search {
+  display: flex;
+  align-items: center;
+  background: var(--color-bg-subtle);
+  border: 1.5px solid var(--color-border-dark);
+  border-radius: var(--radius-full);
+  padding: 3px 6px 3px 14px;
+  transition: all var(--transition-fast);
+}
+
+.header-search:focus-within {
+  border-color: var(--brand-saffron-dark);
+  box-shadow: 0 0 0 3px rgba(230, 81, 0, 0.15);
+  background: #ffffff;
+}
+
+.header-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.875rem;
+  width: 160px;
+  color: var(--color-text-dark);
+}
+
+.header-search button {
+  background: var(--brand-saffron-gradient);
+  color: #ffffff;
+  border-radius: var(--radius-full);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(230, 81, 0, 0.3);
+  transition: transform var(--transition-fast);
+}
+
+.header-search button:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Bar */
+.gov-navbar {
+  background: var(--primary-navy);
+  border-top: 3px solid var(--brand-saffron);
+}
+
+.gov-navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-link:hover, .nav-link.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--brand-saffron);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--brand-saffron);
+}
+
+/* Mobile Toggle */
+.mobile-nav-toggle {
+  display: none;
+  color: #ffffff;
+  padding: 8px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .header-auxiliary {
+    display: none;
+  }
+  .mobile-nav-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav-link {
+    width: 100%;
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}

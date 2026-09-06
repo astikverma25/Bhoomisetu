@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="100%" height="100%">
+  <circle cx="40" cy="40" r="38" fill="#faf5ff" stroke="#e9d5ff" stroke-width="2"/>
+  <!-- Scales of Justice / Court Gavel -->
+  <g transform="translate(18, 18)">
+    <!-- Scale beam -->
+    <line x1="22" y1="8" x2="22" y2="38" stroke="#7e22ce" stroke-width="2.5"/>
+    <line x1="6" y1="12" x2="38" y2="12" stroke="#7e22ce" stroke-width="2.5"/>
+    <!-- Left pan -->
+    <path d="M 6 12 L 2 24 L 14 24 Z" fill="#9333ea" opacity="0.6"/>
+    <!-- Right pan -->
+    <path d="M 38 12 L 34 24 L 46 24 Z" fill="#9333ea" opacity="0.6"/>
+    <!-- Base -->
+    <rect x="12" y="38" width="20" height="4" rx="2" fill="#6b21a8"/>
+  </g>
+</svg>

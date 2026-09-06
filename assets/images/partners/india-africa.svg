@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" width="100%" height="100%">
+  <!-- India Africa -->
+  <g transform="translate(10, 8)">
+    <text x="0" y="20" font-family="'Outfit', sans-serif" font-size="16" font-weight="900" fill="#E65100">India<tspan fill="#138808">africa</tspan></text>
+    <circle cx="100" cy="15" r="3" fill="#FF9933"/>
+    <text x="0" y="32" font-family="'Inter', sans-serif" font-size="7" font-weight="700" fill="#333333" letter-spacing="1">A SHARED FUTURE</text>
+  </g>
+</svg>

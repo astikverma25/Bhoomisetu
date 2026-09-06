@@ -1,0 +1,111 @@
+/* =========================================================
+   COMPREHENSIVE DARK GOVERNMENT FOOTER
+   ========================================================= */
+
+.gov-footer {
+  background-color: var(--primary-navy-dark);
+  color: #cbd5e1;
+  padding: 50px 0 0 0;
+  font-size: 0.875rem;
+  border-top: 4px solid var(--brand-saffron);
+}
+
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-emblem-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-emblem-wrap img {
+  height: 52px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer-brand-desc {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #94a3b8;
+}
+
+.footer-hours-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--brand-saffron);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  color: #e2e8f0;
+}
+
+.footer-links-col h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 18px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.footer-links-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--brand-saffron);
+}
+
+.footer-links-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links-col li a {
+  color: #94a3b8;
+  transition: all var(--transition-fast);
+  display: inline-block;
+}
+
+.footer-links-col li a:hover {
+  color: var(--brand-saffron);
+  transform: translateX(4px);
+}
+
+/* Bottom Copyright Bar */
+.footer-bottom-bar {
+  background: #000c1d;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+@media (max-width: 900px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
